@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$bleu: hsl(209, 23%, 22%);
+$bleuFonce1: hsl(207, 26%, 17%);
+$bleuFonce2: hsl(200, 15%, 8%);
+$grisSombre: hsl(0, 0%, 52%);
+$petitGris: hsl(0, 0%, 98%);
+$blanc: hsl(0, 0%, 100%);
+body {
+  background-color: red;
+}
