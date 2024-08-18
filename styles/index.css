@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Nunito300";
+  src: url(../font/Nunito300.ttf);
+}
+@font-face {
+  font-family: "Nunito600";
+  src: url(../font/Nunito600.ttf);
+}
+@font-face {
+  font-family: "Nunito800";
+  src: url(../font/Nunito800.ttf);
+}
 body {
-  background-color: red;
+  background-color: hsl(209, 23%, 22%);
+  font-family: Nunito300;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=index.css.map */

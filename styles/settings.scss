@@ -3,13 +3,43 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: "Nunito300";
+  src: url(../font/Nunito300.ttf);
+}
+@font-face {
+  font-family: "Nunito600";
+  src: url(../font/Nunito600.ttf);
+}
+@font-face {
+  font-family: "Nunito800";
+  src: url(../font/Nunito800.ttf);
+}
+$Nunito300: Nunito300;
+$Nunito600: Nunito600;
+$Nunito800: Nunito800;
+// color
 $bleu: hsl(209, 23%, 22%);
 $bleuFonce1: hsl(207, 26%, 17%);
 $bleuFonce2: hsl(200, 15%, 8%);
 $grisSombre: hsl(0, 0%, 52%);
 $petitGris: hsl(0, 0%, 98%);
 $blanc: hsl(0, 0%, 100%);
+
 body {
-  background-color: red;
+  background-color: $bleu;
+  font-family: $Nunito300;
+}
+
+@mixin Spacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
