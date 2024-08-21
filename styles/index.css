@@ -54,7 +54,7 @@ header span {
   margin-left: 5px;
   cursor: pointer;
 }
-header i {
+header nav i {
   padding: 0 10px;
 }
 header form {
@@ -81,13 +81,35 @@ header form input {
   border-radius: 5px;
   width: 320px;
 }
-header form i {
+header form .form-1-container i {
   color: black !important;
   position: absolute;
   left: 15px;
   top: 50%;
   transform: translateY;
   transform: translateY(-50%);
+}
+header form span {
+  background-color: hsl(0, 0%, 100%);
+  padding: 5%;
+  width: 200px;
+}
+header form .Select {
+  width: 170px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 100%);
+  padding: 5%;
+  border-radius: 5px;
+}
+header form h3 {
+  font-size: 0.9rem;
+}
+header form .Select i {
+  position: relative;
 }
 
 .toggleBlack2 {

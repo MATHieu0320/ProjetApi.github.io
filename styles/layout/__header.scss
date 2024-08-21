@@ -21,7 +21,7 @@ header {
     margin-left: 5px;
     cursor: pointer;
   }
-  i {
+  nav i {
     padding: 0 10px;
   }
   form {
@@ -47,7 +47,7 @@ header {
 
       width: 320px;
     }
-    i {
+    .form-1-container i {
       color: black !important;
       position: absolute;
       left: 15px;
@@ -55,6 +55,51 @@ header {
       top: 50%;
       transform: translateY;
       transform: translateY(-50%);
+    }
+
+    // .white {
+    //   width: 155px;
+    //   background: white;
+    //   height: 48px;
+    //   text-align: center;
+    // }
+    // select {
+    //   width: 144px;
+    //   cursor: pointer;
+    //   background-color: $blanc;
+    //   border: none;
+
+    //   outline: none;
+    //   padding: 15px 0;
+    //   border-radius: 5px;
+    // }
+    // select:focus {
+    //   border: none;
+    // }
+
+    // select {
+    //   // border: 0px;
+    //   // outline: 0px;
+    // }
+    span {
+      background-color: $blanc;
+      padding: 5%;
+      width: 200px;
+    }
+    .Select {
+      width: 170px;
+      height: 50px;
+      @include Spacebetween;
+      cursor: pointer;
+      background-color: $blanc;
+      padding: 5%;
+      border-radius: 5px;
+    }
+    h3 {
+      font-size: 0.9rem;
+    }
+    .Select i {
+      position: relative;
     }
   }
 }
