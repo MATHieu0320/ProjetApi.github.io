@@ -28,7 +28,9 @@ header {
     background-color: $petitGris;
     .form-1 {
       padding: 50px 5% 0 5%;
-      @include Spacebetween;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
       max-width: 1500px;
       margin: 0 auto;
     }
@@ -57,30 +59,6 @@ header {
       transform: translateY(-50%);
     }
 
-    // .white {
-    //   width: 155px;
-    //   background: white;
-    //   height: 48px;
-    //   text-align: center;
-    // }
-    // select {
-    //   width: 144px;
-    //   cursor: pointer;
-    //   background-color: $blanc;
-    //   border: none;
-
-    //   outline: none;
-    //   padding: 15px 0;
-    //   border-radius: 5px;
-    // }
-    // select:focus {
-    //   border: none;
-    // }
-
-    // select {
-    //   // border: 0px;
-    //   // outline: 0px;
-    // }
     span {
       background-color: $blanc;
       padding: 5%;
@@ -92,14 +70,25 @@ header {
       @include Spacebetween;
       cursor: pointer;
       background-color: $blanc;
-      padding: 5%;
+      padding: 8%;
       border-radius: 5px;
     }
     h3 {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .Select i {
       position: relative;
+    }
+    ul {
+      background-color: hsl(0, 0%, 100%);
+      margin-top: 10px;
+      padding: 13px 15px;
+      height: 147px;
+      border-radius: 5px;
+      display: none;
+    }
+    li {
+      margin-top: 2px;
     }
   }
 }
@@ -109,9 +98,12 @@ header {
 //   opacity: 2;
 // }
 .toggleBlack2 {
-  background-color: $bleu;
+  background-color: $bleu !important;
   color: $blanc !important;
 }
 .toggleBlack2Placeholder::placeholder {
   color: $blanc;
+}
+.display {
+  display: block;
 }

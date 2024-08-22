@@ -63,8 +63,8 @@ header form {
 header form .form-1 {
   padding: 50px 5% 0 5%;
   display: flex;
+  align-items: start;
   justify-content: space-between;
-  align-items: center;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -102,18 +102,29 @@ header form .Select {
   align-items: center;
   cursor: pointer;
   background-color: hsl(0, 0%, 100%);
-  padding: 5%;
+  padding: 8%;
   border-radius: 5px;
 }
 header form h3 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 header form .Select i {
   position: relative;
 }
+header form ul {
+  background-color: hsl(0, 0%, 100%);
+  margin-top: 10px;
+  padding: 13px 15px;
+  height: 147px;
+  border-radius: 5px;
+  display: none;
+}
+header form li {
+  margin-top: 2px;
+}
 
 .toggleBlack2 {
-  background-color: hsl(209, 23%, 22%);
+  background-color: hsl(209, 23%, 22%) !important;
   color: hsl(0, 0%, 100%) !important;
 }
 
@@ -123,4 +134,8 @@ header form .Select i {
 
 .toggleBlack2Placeholder::placeholder {
   color: hsl(0, 0%, 100%);
+}
+
+.display {
+  display: block;
 }/*# sourceMappingURL=index.css.map */
