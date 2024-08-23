@@ -13,7 +13,8 @@ header {
     }
   }
   h1 {
-    font-family: $Nunito600;
+    font-family: $Nunito900;
+    font-size: 1rem;
   }
   span {
     font-family: $Nunito600;
@@ -92,11 +93,11 @@ header {
     }
   }
 }
-// .toggleBlack {
-//   background-color: $bleuFonce1;
-//   color: $blanc;
-//   opacity: 2;
-// }
+
+.toggleBlack1 {
+  background-color: $bleuFonce1;
+  color: black;
+}
 .toggleBlack2 {
   background-color: $bleu !important;
   color: $blanc !important;
@@ -106,4 +107,6 @@ header {
 }
 .display {
   display: block;
+  width: 174px;
+  position: absolute;
 }
