@@ -13,8 +13,9 @@ header {
     }
   }
   h1 {
-    font-family: $Nunito900;
-    font-size: 1rem;
+    // font-family: $Nunito900;
+    font-size: 1.3rem;
+    font-family: $Nunito600;
   }
   span {
     font-family: $Nunito600;
@@ -51,7 +52,7 @@ header {
       width: 320px;
     }
     .form-1-container i {
-      color: black !important;
+      color: black;
       position: absolute;
       left: 15px;
 
@@ -94,13 +95,13 @@ header {
   }
 }
 
-.toggleBlack1 {
-  background-color: $bleuFonce1;
+.toggleBlack3 {
+  background-color: $bleuFonce1 !important;
   color: black;
 }
 .toggleBlack2 {
   background-color: $bleu !important;
-  color: $blanc !important;
+  color: rgba(245, 245, 245, 0.938) !important;
 }
 .toggleBlack2Placeholder::placeholder {
   color: $blanc;
