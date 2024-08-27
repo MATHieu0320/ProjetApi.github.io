@@ -1,0 +1,28 @@
+#resultat {
+  padding: 25px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.Container-Pays {
+  width: 270px;
+  height: 350px;
+}
+.Container-Pays img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+.Container-Pays h4 {
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.MarginLeft {
+  padding: 5%;
+}

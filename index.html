@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body class="toggleBlack1">
+    <header>
+      <nav class="toggleBlack">
+        <div class="nav-1">
+          <h1>Where in the world?</h1>
+          <span><i class="fa-regular fa-moon"></i>Dark Mode</span>
+        </div>
+      </nav>
+      <form action="#" class="toggleBlack1">
+        <div class="form-1">
+          <div class="form-1-container">
+            <i class="fa-solid fa-magnifying-glass toggleBlack"></i>
+            <input
+              type="text"
+              placeholder="Search for a country"
+              class="toggleBlack" />
+          </div>
+          <div class="select-list">
+            <div class="Select toggleBlack">
+              <h3>Filter by Region</h3>
+
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <ul class="toggleBlack">
+              <li id="Africa">Africa</li>
+              <li id="America">America</li>
+              <li id="Asia">Asia</li>
+              <li id="Europe">Europe</li>
+              <li id="Oceania">Oceania</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </header>
+    <div id="resultat"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
+<!-- revoir barre de recherche avec icone -->

@@ -97,11 +97,12 @@ header {
 
 .toggleBlack3 {
   background-color: $bleuFonce1 !important;
-  color: black;
+  color: black !important;
 }
 .toggleBlack2 {
   background-color: $bleu !important;
   color: rgba(245, 245, 245, 0.938) !important;
+  // je veux lui toggleclass
 }
 .toggleBlack2Placeholder::placeholder {
   color: $blanc;

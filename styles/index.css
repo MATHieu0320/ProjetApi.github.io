@@ -126,7 +126,7 @@ header form li {
 
 .toggleBlack3 {
   background-color: hsl(207, 26%, 17%) !important;
-  color: black;
+  color: black !important;
 }
 
 .toggleBlack2 {
