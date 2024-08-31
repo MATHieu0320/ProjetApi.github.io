@@ -2,66 +2,93 @@
 
 var changementDeBackground = document.querySelector("header nav span");
 var InputSeatch = document.querySelector("input");
-var form = document.querySelector("form"); // listes continent clique
+var form = document.querySelector("form");
+var Resultat = document.getElementById("resultat"); // listes continent clique
 
 var ListesContinent = document.querySelectorAll("Select-list ul");
 console.log(ListesContinent); // changementDeBackground
 
 var DarkOrWhite = false;
 var ClassDarkOrWhite = "toggleBlack";
-console.log(ClassDarkOrWhite);
-changementDeBackground.addEventListener("click", function () {
-  var toggleClass = document.querySelectorAll(".toggleBlack");
-  var toggleClass1 = document.querySelectorAll(".toggleBlack1"); // const ContainerPays = document.querySelector(".Container-Pays");
 
-  affichage();
-  DarkOrWhite = !DarkOrWhite;
-  console.log(DarkOrWhite);
-  toggleClass.forEach(function (all) {
-    all.classList.toggle("toggleBlack2");
+function ChangerLacouleur(params) {
+  var toggleClass, toggleClass1;
+  return regeneratorRuntime.async(function ChangerLacouleur$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          toggleClass = document.querySelectorAll(".toggleBlack");
+          toggleClass1 = document.querySelectorAll(".toggleBlack1");
+          affichage(continent);
+          DarkOrWhite = !DarkOrWhite;
+          console.log(DarkOrWhite);
+          console.log(DarkOrWhite);
+          toggleClass.forEach(function (all) {
+            all.classList.toggle("toggleBlack2");
+          });
+          toggleClass1.forEach(function (all2) {
+            all2.classList.toggle("toggleBlack3");
+          });
+
+        case 8:
+        case "end":
+          return _context.stop();
+      }
+    }
   });
-  toggleClass1.forEach(function (all2) {
-    all2.classList.toggle("toggleBlack3");
-  });
-}); //////////////////////////////////////////////////////////
+}
+
+changementDeBackground.addEventListener("click", ChangerLacouleur); //////////////////////////////////////////////////////////
 // clique continent
 
 var select = document.querySelector(".Select");
 var ul = document.querySelector("header form ul");
+var li = document.querySelectorAll("header form ul li");
 console.log(ul);
+var continent = "Europe";
 select.addEventListener("click", function () {
   ul.classList.toggle("display");
+});
+li.forEach(function (continent) {
+  // affichage("Asia");
+  continent.addEventListener("click", function (e) {
+    continent = e.target.id;
+    continent = continent;
+    console.log(continent);
+    affichage(e.target.id);
+  });
 }); //////////////////////////////////////////////////////////
 // API;
 
 var result = [];
 
 function RecuperationApi() {
-  return regeneratorRuntime.async(function RecuperationApi$(_context) {
+  return regeneratorRuntime.async(function RecuperationApi$(_context2) {
     while (1) {
-      switch (_context.prev = _context.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
+          _context2.next = 2;
           return regeneratorRuntime.awrap(fetch("https://restcountries.com/v3.1/all").then(function (res) {
             return res.json();
           }).then(function (reponse) {
-            result = reponse;
-            console.log(result);
+            result = reponse; // console.log(result);
           }));
 
         case 2:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
     }
   });
 } // targetVALUE
 
 
-var ValueInput = "";
+var ValueInput = "d";
 InputSeatch.addEventListener("input", function (e) {
+  console.log(continent);
   ValueInput = e.target.value;
-  affichage();
+  affichage(continent);
+  console.log(continent);
 }); // form.addEventListener("submit", () => {
 //   console.log("p");
 //   affichage();
@@ -69,40 +96,34 @@ InputSeatch.addEventListener("input", function (e) {
 // });
 //////////////////////////////////////////////////////////
 
-function affichage() {
-  var Resultat;
-  return regeneratorRuntime.async(function affichage$(_context2) {
+function affichage(idContinent) {
+  return regeneratorRuntime.async(function affichage$(_context3) {
     while (1) {
-      switch (_context2.prev = _context2.next) {
+      switch (_context3.prev = _context3.next) {
         case 0:
-          _context2.next = 2;
+          _context3.next = 2;
           return regeneratorRuntime.awrap(RecuperationApi());
 
         case 2:
-          Resultat = document.getElementById("resultat");
-          setTimeout(function () {
-            console.log(ValueInput, result[2].translations.fra.common);
-          }, 2000); // let Pays = result.translations.fra.common;
-
+          continent = idContinent;
           Resultat.innerHTML = result.filter(function (pays) {
-            if (DarkOrWhite == true) {
-              ClassDarkOrWhite = "toggleBlack";
-            } else if (DarkOrWhite == false) {
-              ClassDarkOrWhite = "toggleBlack1";
+            var RegionSelect;
+
+            if (pays.region == idContinent) {
+              RegionSelect = pays; // console.log(pays);
+
+              return pays.translations.fra.common.toLocaleLowerCase().includes(ValueInput.toLocaleLowerCase());
             }
-
-            console.log(ClassDarkOrWhite);
-            return pays.translations.fra.common.toLocaleLowerCase().includes(ValueInput.toLocaleLowerCase());
           }).map(function (pays) {
-            return "\n\n    <div class=\"Container-Pays ".concat(DarkOrWhite ? "toggleBlack2" : "toggleBlack1", "\">\n  <img src=\"").concat(pays.flags.png, "\" alt=").concat("drapeau " + pays.name.common, " >\n\n     <div class = \"MarginLeft\">\n  <h2>").concat(pays.translations.fra.common.slice(0, 17), " </h2>\n  <h4> Population : ").concat(pays.population.toLocaleString("fr-FR"), "</h4>\n  <h4> Continent : ").concat(pays.region, "</h4>\n  <h4> Capital : ").concat(pays.capital, "</h4>\n   </div>\n     </div>");
-          }).join(" ");
+            return "\n\n    <div class=\"Container-Pays ".concat(DarkOrWhite ? "toggleBlack2" : "toggleBlack1", "\">\n  <img src=\"").concat(pays.flags.png, "\" alt=").concat("drapeau " + pays.name.common, " >\n\n     <div class = \"MarginLeft toggleBlack\">\n  <h2 >").concat(pays.translations.fra.common, " </h2>\n  <h4  > Population : <span class = \"Pupulation\">").concat(pays.population.toLocaleString("fr-FR"), " </span></h4>\n  <h4> Continent :<span class = \"Pupulation\"> ").concat(pays.region, "</span></h4>\n  <h4> Capital :<span class = \"Pupulation\"> ").concat(pays.capital, "</span></h4>\n   </div>\n     </div>");
+          }).slice(0, 8).join(" ");
 
-        case 5:
+        case 4:
         case "end":
-          return _context2.stop();
+          return _context3.stop();
       }
     }
   });
 }
 
-affichage();
+affichage("Asia");

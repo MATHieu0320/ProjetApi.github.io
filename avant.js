@@ -1,3 +1,22 @@
+// function ChangerLacouleur(params) {
+//   changementDeBackground.addEventListener("click", () => {
+//     const toggleClass = document.querySelectorAll(".toggleBlack");
+//     const toggleClass1 = document.querySelectorAll(".toggleBlack1");
+
+//     affichage("Europe");
+//     DarkOrWhite = !DarkOrWhite;
+//     console.log(DarkOrWhite);
+
+//     toggleClass.forEach((all) => {
+//       all.classList.toggle("toggleBlack2");
+//     });
+//     toggleClass1.forEach((all2) => {
+//       all2.classList.toggle("toggleBlack3");
+//     });
+//   });
+// }
+// changementDeBackground.addEventListener("click", ChangerLacouleur);
+avant;
 const changementDeBackground = document.querySelector("header nav span");
 const InputSeatch = document.querySelector("input");
 const form = document.querySelector("form");
@@ -12,12 +31,13 @@ console.log(ListesContinent);
 let DarkOrWhite = false;
 let ClassDarkOrWhite = "toggleBlack";
 
-async function ChangerLacouleur(params) {
+console.log(ClassDarkOrWhite);
+changementDeBackground.addEventListener("click", () => {
   const toggleClass = document.querySelectorAll(".toggleBlack");
   const toggleClass1 = document.querySelectorAll(".toggleBlack1");
-  affichage(continent);
+  // const ContainerPays = document.querySelector(".Container-Pays");
+  affichage();
   DarkOrWhite = !DarkOrWhite;
-  console.log(DarkOrWhite);
   console.log(DarkOrWhite);
 
   toggleClass.forEach((all) => {
@@ -26,9 +46,7 @@ async function ChangerLacouleur(params) {
   toggleClass1.forEach((all2) => {
     all2.classList.toggle("toggleBlack3");
   });
-}
-changementDeBackground.addEventListener("click", ChangerLacouleur);
-
+});
 //////////////////////////////////////////////////////////
 
 // clique continent
@@ -36,16 +54,16 @@ const select = document.querySelector(".Select");
 const ul = document.querySelector("header form ul");
 const li = document.querySelectorAll("header form ul li");
 console.log(ul);
-let continent = "Europe";
+
 select.addEventListener("click", () => {
   ul.classList.toggle("display");
 });
 
+let continent = "";
 li.forEach((continent) => {
-  // affichage("Asia");
+  affichage("Europe");
   continent.addEventListener("click", (e) => {
     continent = e.target.id;
-    continent = continent;
     console.log(continent);
     affichage(e.target.id);
   });
@@ -59,18 +77,16 @@ async function RecuperationApi() {
     .then((res) => res.json())
     .then((reponse) => {
       result = reponse;
-      // console.log(result);
+      console.log(result);
     });
 }
 
 // targetVALUE
-let ValueInput = "d";
+let ValueInput = "";
 
 InputSeatch.addEventListener("input", (e) => {
-  console.log(continent);
   ValueInput = e.target.value;
-  affichage(continent);
-  console.log(continent);
+  affichage();
 });
 
 // form.addEventListener("submit", () => {
@@ -83,15 +99,20 @@ InputSeatch.addEventListener("input", (e) => {
 //////////////////////////////////////////////////////////
 async function affichage(idContinent) {
   await RecuperationApi();
-  continent = idContinent;
+  console.log(idContinent);
 
   Resultat.innerHTML = result
     .filter((pays) => {
       let RegionSelect;
+      if (DarkOrWhite == true) {
+        ClassDarkOrWhite = "toggleBlack";
+      } else if (DarkOrWhite == false) {
+        ClassDarkOrWhite = "toggleBlack1";
+      }
 
       if (pays.region == idContinent) {
         RegionSelect = pays;
-        // console.log(pays);
+        console.log(pays);
 
         return pays.translations.fra.common
           .toLocaleLowerCase()
@@ -107,17 +128,14 @@ async function affichage(idContinent) {
     }">
   <img src="${pays.flags.png}" alt=${"drapeau " + pays.name.common} >
 
-     <div class = "MarginLeft toggleBlack">
-  <h2 >${pays.translations.fra.common} </h2>
-  <h4  > Population : <span class = "Pupulation">${pays.population.toLocaleString(
-    "fr-FR"
-  )} </span></h4>
-  <h4> Continent :<span class = "Pupulation"> ${pays.region}</span></h4>
-  <h4> Capital :<span class = "Pupulation"> ${pays.capital}</span></h4>
+     <div class = "MarginLeft">
+  <h2>${pays.translations.fra.common.slice(0, 17)} </h2>
+  <h4> Population : ${pays.population.toLocaleString("fr-FR")}</h4>
+  <h4> Continent : ${pays.region}</h4>
+  <h4> Capital : ${pays.capital}</h4>
    </div>
      </div>`
     )
-    .slice(0, 8)
     .join(" ");
 }
-affichage("Asia");
+affichage();

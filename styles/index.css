@@ -62,7 +62,7 @@ header form {
   background-color: hsl(0, 0%, 98%);
 }
 header form .form-1 {
-  padding: 50px 5% 0 5%;
+  padding: 41px 5% 0 5%;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -122,6 +122,7 @@ header form ul {
 }
 header form li {
   margin-top: 2px;
+  cursor: pointer;
 }
 
 .toggleBlack3 {
@@ -149,7 +150,7 @@ header form li {
 }
 
 #resultat {
-  padding: 25px 5%;
+  padding: 35px 5% 27px 5%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -162,7 +163,10 @@ header form li {
 .Container-Pays {
   background: hsl(0, 0%, 100%);
   width: 270px;
-  height: 350px;
+  height: 330px;
+}
+.Container-Pays .MarginLeft h2 {
+  font-size: 1.2rem;
 }
 .Container-Pays img {
   width: 100%;
@@ -176,4 +180,8 @@ header form li {
 
 .MarginLeft {
   padding: 5%;
+}
+
+.Pupulation {
+  color: gray;
 }/*# sourceMappingURL=index.css.map */
