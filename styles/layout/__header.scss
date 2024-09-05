@@ -113,3 +113,22 @@ header {
   width: 174px;
   position: absolute;
 }
+
+@media screen and (max-width: 575px) {
+  header form .form-1 {
+    display: block;
+  }
+  header form input {
+    width: 100%;
+  }
+  header form .Select {
+    padding: 6%;
+    margin-top: 38px;
+    width: 213px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header h1 {
+    font-size: 1rem;
+  }
+}

@@ -21,6 +21,7 @@ const changementDeBackground = document.querySelector("header nav span");
 const InputSeatch = document.querySelector("input");
 const form = document.querySelector("form");
 const Resultat = document.getElementById("resultat");
+const resultatAuClick = document.getElementById("resultatAuClick");
 // listes continent clique
 
 const ListesContinent = document.querySelectorAll("Select-list ul");
@@ -101,7 +102,7 @@ async function affichage(idContinent) {
   await RecuperationApi();
   console.log(idContinent);
 
-  Resultat.innerHTML = result
+  resultatAuClick.innerHTML = result
     .filter((pays) => {
       let RegionSelect;
       if (DarkOrWhite == true) {

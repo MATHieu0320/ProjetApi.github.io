@@ -20,7 +20,8 @@ avant;
 var changementDeBackground = document.querySelector("header nav span");
 var InputSeatch = document.querySelector("input");
 var form = document.querySelector("form");
-var Resultat = document.getElementById("resultat"); // listes continent clique
+var Resultat = document.getElementById("resultat");
+var resultatAuClick = document.getElementById("resultatAuClick"); // listes continent clique
 
 var ListesContinent = document.querySelectorAll("Select-list ul");
 console.log(ListesContinent); // changementDeBackground
@@ -107,7 +108,7 @@ function affichage(idContinent) {
 
         case 2:
           console.log(idContinent);
-          Resultat.innerHTML = result.filter(function (pays) {
+          resultatAuClick.innerHTML = result.filter(function (pays) {
             var RegionSelect;
 
             if (DarkOrWhite == true) {

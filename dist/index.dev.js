@@ -3,7 +3,8 @@
 var changementDeBackground = document.querySelector("header nav span");
 var InputSeatch = document.querySelector("input");
 var form = document.querySelector("form");
-var Resultat = document.getElementById("resultat"); // listes continent clique
+var Resultat = document.getElementById("resultat");
+var resultatAuClick = document.getElementById("resultatAuClick"); // listes continent clique
 
 var ListesContinent = document.querySelectorAll("Select-list ul");
 console.log(ListesContinent); // changementDeBackground
@@ -71,6 +72,7 @@ function RecuperationApi() {
           return regeneratorRuntime.awrap(fetch("https://restcountries.com/v3.1/all").then(function (res) {
             return res.json();
           }).then(function (reponse) {
+            console.log(reponse);
             result = reponse; // console.log(result);
           }));
 
@@ -97,6 +99,7 @@ InputSeatch.addEventListener("input", function (e) {
 //////////////////////////////////////////////////////////
 
 function affichage(idContinent) {
+  var ContainerPays;
   return regeneratorRuntime.async(function affichage$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
@@ -115,10 +118,18 @@ function affichage(idContinent) {
               return pays.translations.fra.common.toLocaleLowerCase().includes(ValueInput.toLocaleLowerCase());
             }
           }).map(function (pays) {
-            return "\n\n    <div class=\"Container-Pays ".concat(DarkOrWhite ? "toggleBlack2" : "toggleBlack1", "\">\n  <img src=\"").concat(pays.flags.png, "\" alt=").concat("drapeau " + pays.name.common, " >\n\n     <div class = \"MarginLeft toggleBlack\">\n  <h2 >").concat(pays.translations.fra.common, " </h2>\n  <h4  > Population : <span class = \"Pupulation\">").concat(pays.population.toLocaleString("fr-FR"), " </span></h4>\n  <h4> Continent :<span class = \"Pupulation\"> ").concat(pays.region, "</span></h4>\n  <h4> Capital :<span class = \"Pupulation\"> ").concat(pays.capital, "</span></h4>\n   </div>\n     </div>");
+            return "\n\n    <div class=\"Container-Pays ".concat(DarkOrWhite ? "toggleBlack2" : "toggleBlack1", "\">\n  <img src=\"").concat(pays.flags.png, "\" alt=").concat(pays.translations.fra.common, " >\n\n     <div class = \"MarginLeft toggleBlack\">\n  <h2 >").concat(pays.translations.fra.common.slice(0, 22), " </h2>\n  <h4  > Population : <span class = \"Pupulation\">").concat(pays.population.toLocaleString("fr-FR"), " </span></h4>\n  <h4> Continent :<span class = \"Pupulation\"> ").concat(pays.region, "</span></h4>\n  <h4> Capital :<span class = \"Pupulation\"> ").concat(pays.capital, "</span></h4>\n   </div>\n     </div>");
           }).slice(0, 8).join(" ");
+          ContainerPays = document.querySelectorAll(".Container-Pays");
+          console.log(ContainerPays);
+          ContainerPays.forEach(function (container) {
+            container.addEventListener("click", function (e) {
+              var ValeurAuClick = e.target.alt;
+              InformationAuClick(ValeurAuClick);
+            });
+          });
 
-        case 4:
+        case 7:
         case "end":
           return _context3.stop();
       }
@@ -127,3 +138,16 @@ function affichage(idContinent) {
 }
 
 affichage("Asia");
+
+function InformationAuClick(nomDuPays) {
+  var Langues = ["fra", "eng", "esp", "slv", "kor", "rus", "ESP"];
+  resultatAuClick.innerHTML = result.filter(function (paysSelect) {
+    if (nomDuPays == paysSelect.translations.fra.common) {
+      return nomDuPays;
+    } else {
+      console.log("f");
+    }
+  }).map(function (pays) {
+    return "\n<div class= \"Separation\">\n<div class = \"Separation1\">\n <img src=\"".concat(pays.flags.png, "\" alt=").concat(pays.translations.fra.common, " >\n </div>\n<div class = \"Separation2\">\n\n\n\n  <h1>").concat(pays.translations.fra.common, " </h1>\n<div class = \"Separation3\">\n<div >\n\n  <h4> Population :<span class = \"Pupulation\"> ").concat(pays.population, "</span></h4>  \n  <h4> Region :<span class = \"Pupulation\"> ").concat(pays.region, "</span></h4>\n  <h4> subregion :<span class = \"Pupulation\"> ").concat(pays.subregion, "</span></h4>\n\n  <h4> Capital :<span class = \"Pupulation\"> ").concat(pays.capital, "</span></h4>\n\n  </div>\n  <div >\n  <h4> Top Level Domain:<span class = \"Pupulation\"> ").concat(pays.tld, "</span></h4>\n\n\n <h4> languages :<span class = \"Pupulation\"> ").concat(pays.languages, " </span></h4>\n  </div>\n</div>\n</div>\n</div>\n       </div>\n     </div>\n   ");
+  });
+}

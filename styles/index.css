@@ -17,7 +17,7 @@
   src: url(../font/Nunito800.ttf);
 }
 body {
-  background-color: hsl(0, 0%, 98%);
+  background-color: #fafafa;
   font-family: Nunito300;
 }
 
@@ -149,6 +149,24 @@ header form li {
   position: absolute;
 }
 
+@media screen and (max-width: 575px) {
+  header form .form-1 {
+    display: block;
+  }
+  header form input {
+    width: 100%;
+  }
+  header form .Select {
+    padding: 6%;
+    margin-top: 38px;
+    width: 213px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header h1 {
+    font-size: 1rem;
+  }
+}
 #resultat {
   padding: 35px 5% 27px 5%;
   display: flex;
@@ -184,4 +202,25 @@ header form li {
 
 .Pupulation {
   color: gray;
+}
+
+#resultatAuClick {
+  z-index: 21;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Separation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }/*# sourceMappingURL=index.css.map */
