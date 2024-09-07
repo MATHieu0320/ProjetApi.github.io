@@ -21,10 +21,6 @@
     height: 200px;
     border-radius: 5px;
   }
-  h4 {
-    font-size: 0.8rem;
-    margin-top: 8px;
-  }
 }
 .MarginLeft {
   padding: 5%;
@@ -39,15 +35,39 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: whitesmoke;
-  height: 100vh;
-  width: 80%;
+  height: 50vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .Separation {
   display: flex;
-  align-items: center;
+  gap: 50px;
   justify-content: center;
-  gap: 30px;
+  padding: 0 5%;
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100%;
+  h4 {
+    margin-top: 15px;
+  }
+}
+.Separation2 h1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.Separation {
+  img {
+    height: 356px;
+    width: 500px;
+  }
+  .Separation3 {
+    display: flex;
+    gap: 70px;
+  }
+}
+h4 {
+  font-size: 0.8rem;
+  margin-top: 8px;
 }

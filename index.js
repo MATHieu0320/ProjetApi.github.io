@@ -149,8 +149,9 @@ function InformationAuClick(nomDuPays) {
     .map(
       (pays) =>
         `
-<div class= "Separation">
-<div class = "Separation1">
+      <span id= "Back">Back</span>
+<div class= "Separation toggleBlack" >
+<div class = "Separation1 ">
  <img src="${pays.flags.png}" alt=${pays.translations.fra.common} >
  </div>
 <div class = "Separation2">
@@ -158,7 +159,7 @@ function InformationAuClick(nomDuPays) {
 
 
   <h1>${pays.translations.fra.common} </h1>
-<div class = "Separation3">
+<div class = "Separation3  toggleBlack">
 <div >
 
   <h4> Population :<span class = "Pupulation"> ${pays.population}</span></h4>  
