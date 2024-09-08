@@ -203,15 +203,24 @@ header form li {
 #resultatAuClick {
   z-index: 21;
   position: absolute;
-  top: 50%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: whitesmoke;
-  height: 50vh;
-  width: 100%;
+  height: 100vh;
+  width: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#resultatAuClick #Back {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  padding: 0 5%;
+  max-width: 1500px;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .Separation {
