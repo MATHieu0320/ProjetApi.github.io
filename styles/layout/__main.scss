@@ -30,25 +30,35 @@
 }
 #resultatAuClick {
   z-index: 21;
-  position: absolute;
+  position: inherit;
   top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: whitesmoke;
   height: 100vh;
-  width: 10%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  #Back {
+  #Back-container {
     position: absolute;
-    top: 24px;
+    top: 65px;
     left: 50%;
     padding: 0 5%;
     max-width: 1500px;
     width: 100%;
     transform: translate(-50%, -50%);
+  }
+  #Back {
+    i {
+      padding-right: 7px;
+    }
+    padding: 6px 33px;
+    cursor: pointer;
+    background: hsl(0, 0%, 100%);
+
+    border-radius: 6px;
+    box-shadow: 1px -1px 8px 2px rgba(0, 0, 0, 0.1);
   }
 }
 .Separation {

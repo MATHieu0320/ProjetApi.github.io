@@ -136,7 +136,8 @@ affichage("Asia");
 
 function InformationAuClick(nomDuPays) {
   const Langues = ["fra", "eng", "esp", "slv", "kor", "rus", "ESP"];
-
+  const resultatAuClick = document.getElementById("resultatAuClick");
+  resultatAuClick.style.position = "absolute";
   resultatAuClick.innerHTML = result
 
     .filter((paysSelect) => {
@@ -149,8 +150,10 @@ function InformationAuClick(nomDuPays) {
     .map(
       (pays) =>
         `
-      
+      <div id = "Back-container">
       <span id= "Back"> <i class="fa-solid fa-arrow-left-long"></i> Back</span>
+      
+      </div>
   
 <div class= "Separation toggleBlack" >
 <div class = "Separation1 toggleBlack ">
@@ -185,3 +188,7 @@ function InformationAuClick(nomDuPays) {
    `
     );
 }
+const Back = document.getElementById("Back");
+Back.addEventListener("click", () => {
+  affichage("Asia");
+});
