@@ -142,7 +142,8 @@ affichage("Asia");
 function InformationAuClick(nomDuPays) {
   var Langues = ["fra", "eng", "esp", "slv", "kor", "rus", "ESP"];
   var resultatAuClick = document.getElementById("resultatAuClick");
-  resultatAuClick.style.position = "absolute";
+  resultatAuClick.style.height = "100vh";
+  resultatAuClick.style.display = "block";
   resultatAuClick.innerHTML = result.filter(function (paysSelect) {
     if (nomDuPays == paysSelect.translations.fra.common) {
       return nomDuPays;
@@ -152,9 +153,11 @@ function InformationAuClick(nomDuPays) {
   }).map(function (pays) {
     return "\n      <div id = \"Back-container\">\n      <span id= \"Back\"> <i class=\"fa-solid fa-arrow-left-long\"></i> Back</span>\n      \n      </div>\n  \n<div class= \"Separation toggleBlack\" >\n<div class = \"Separation1 toggleBlack \">\n <img src=\"".concat(pays.flags.png, "\" alt=").concat(pays.translations.fra.common, " >\n </div>\n<div class = \"Separation2\">\n\n\n\n  <h1>").concat(pays.translations.fra.common, " </h1>\n<div class = \"Separation3\">\n<div >\n\n  <h4> Population :<span class = \"Pupulation\"> ").concat(pays.population, "</span></h4>  \n  <h4> Region :<span class = \"Pupulation\"> ").concat(pays.region, "</span></h4>\n  <h4> subregion :<span class = \"Pupulation\"> ").concat(pays.subregion, "</span></h4>\n\n  <h4> Capital :<span class = \"Pupulation\"> ").concat(pays.capital, "</span></h4>\n\n  </div>\n  <div >\n  <h4> Top Level Domain:<span class = \"Pupulation\"> ").concat(pays.tld, "</span></h4>\n\n\n <h4> languages :<span class = \"Pupulation\"> ").concat(pays.languages, " </span></h4>\n  </div>\n</div>\n</div>\n</div>\n       </div>\n     </div>\n   ");
   });
+  var Back = document.getElementById("Back");
+  var resultat = document.getElementById("resultat");
+  Back.addEventListener("click", function () {
+    resultatAuClick.style.height = "0vh";
+    resultatAuClick.style.display = "none";
+    affichage("Asia");
+  });
 }
-
-var Back = document.getElementById("Back");
-Back.addEventListener("click", function () {
-  affichage("Asia");
-});

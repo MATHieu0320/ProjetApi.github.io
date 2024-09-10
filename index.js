@@ -137,7 +137,8 @@ affichage("Asia");
 function InformationAuClick(nomDuPays) {
   const Langues = ["fra", "eng", "esp", "slv", "kor", "rus", "ESP"];
   const resultatAuClick = document.getElementById("resultatAuClick");
-  resultatAuClick.style.position = "absolute";
+  resultatAuClick.style.height = "100vh";
+  resultatAuClick.style.display = "block";
   resultatAuClick.innerHTML = result
 
     .filter((paysSelect) => {
@@ -187,8 +188,12 @@ function InformationAuClick(nomDuPays) {
      </div>
    `
     );
+  const Back = document.getElementById("Back");
+  const resultat = document.getElementById("resultat");
+  Back.addEventListener("click", () => {
+    resultatAuClick.style.height = "0vh";
+    resultatAuClick.style.display = "none";
+
+    affichage("Asia");
+  });
 }
-const Back = document.getElementById("Back");
-Back.addEventListener("click", () => {
-  affichage("Asia");
-});
