@@ -139,6 +139,7 @@ function InformationAuClick(nomDuPays) {
   const resultatAuClick = document.getElementById("resultatAuClick");
   resultatAuClick.style.height = "100vh";
   resultatAuClick.style.display = "block";
+  document.body.style.overflowY = "hidden";
   resultatAuClick.innerHTML = result
 
     .filter((paysSelect) => {
@@ -156,8 +157,10 @@ function InformationAuClick(nomDuPays) {
       
       </div>
   
-<div class= "Separation toggleBlack" >
-<div class = "Separation1 toggleBlack ">
+<div class= "Separation toggleBlack ${
+          DarkOrWhite ? "toggleBlack2" : "toggleBlack1"
+        }" >
+<div class = "Separation1"><
  <img src="${pays.flags.png}" alt=${pays.translations.fra.common} >
  </div>
 <div class = "Separation2">
@@ -193,7 +196,7 @@ function InformationAuClick(nomDuPays) {
   Back.addEventListener("click", () => {
     resultatAuClick.style.height = "0vh";
     resultatAuClick.style.display = "none";
-
+    document.body.style.overflowY = "auto";
     affichage("Asia");
   });
 }

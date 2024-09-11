@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
+  justify-content: space-between;
   gap: 20px;
   max-width: 1500px;
   margin: 0 auto;
@@ -70,9 +70,9 @@
   gap: 50px;
   justify-content: center;
   padding: 0 5%;
-  margin: 0 auto;
+  margin: 195px auto;
   max-width: 1500px;
-  width: 100%;
+
   h4 {
     margin-top: 15px;
   }
